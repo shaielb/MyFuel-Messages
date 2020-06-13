@@ -1,12 +1,15 @@
 package messages.request;
 
-import java.util.Map;
+import java.util.List;
 
-import db.interfaces.IEntity;
+import messages.QueryContainer;
 
 public interface IFilter extends IRequest {
 
-	public void setQueryEntity(IEntity entity, Map<String, String> querySigns);
+	/**
+	 * @param entitiesMap
+	 */
+	public void setQueryContainers(List<QueryContainer> queries);
 
 	public void setLimit(int limit);
 }

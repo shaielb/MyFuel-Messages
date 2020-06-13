@@ -6,5 +6,8 @@ import db.interfaces.IEntity;
 
 public interface IRemove extends IRequest {
 
+	/**
+	 * @param entities
+	 */
 	public void setEntities(Collection<IEntity> entities);
 }

@@ -1,9 +1,8 @@
 package messages;
 
 import java.io.Serializable;
-import java.util.Map;
+import java.util.List;
 
-import db.interfaces.IEntity;
 import messages.request.ICollect;
 import messages.request.IFilter;
 import messages.request.IInsert;
@@ -12,9 +11,7 @@ import messages.request.IUpdate;
 
 public class Request extends RequestResponse implements Serializable, IFilter, ICollect, IInsert, IUpdate, IRemove {
 
-	private IEntity _queryEntity;
-
-	private Map<String, String> _querySigns;
+	private List<QueryContainer> _queryContainers;
 
 	private String[] _tables;
 
@@ -35,17 +32,12 @@ public class Request extends RequestResponse implements Serializable, IFilter, I
 	}
 
 	@Override
-	public void setQueryEntity(IEntity entity, Map<String, String> querySigns) {
-		_queryEntity = entity;
-		_querySigns = querySigns;
+	public void setQueryContainers(List<QueryContainer> queryContainers) {
+		_queryContainers = queryContainers;
 	}
 
-	public IEntity getQueryEntity() {
-		return _queryEntity;
-	}
-
-	public Map<String, String> getQuerySigns() {
-		return _querySigns;
+	public List<QueryContainer> getQueryContainers() {
+		return _queryContainers;
 	}
 
 	@Override

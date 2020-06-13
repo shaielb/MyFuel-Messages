@@ -16,6 +16,9 @@ public class Message {
 		_response.setHeader(_request.getHeader());
 	}
 
+	/**
+	 * @return
+	 */
 	public Response getResponse() {
 		return _response;
 	}
