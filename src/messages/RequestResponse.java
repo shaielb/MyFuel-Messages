@@ -57,12 +57,33 @@ class RequestResponse implements Serializable {
 	public void setEntities(Collection<IEntity> entities) {
 		_entities = entities;
 	}
+	
+	/**
+	 * @param entities
+	 */
+	public void addEntity(IEntity entity) {
+		if (_entities == null) {
+			_entities = new HashSet<IEntity>();
+		}
+		_entities.add(entity);
+	}
 
 	/**
 	 * @return
 	 */
 	public Collection<IEntity> getEntities() {
 		return _entities;
+	}
+	
+	/**
+	 * @return
+	 */
+	public <TEntity extends IEntity> Collection<TEntity> getEntitiesAsType() {
+		List<TEntity> list = new ArrayList<TEntity>();
+		for (IEntity entity : _entities) {
+			list.add((TEntity) entity);
+		}
+		return list;
 	}
 
 	/**

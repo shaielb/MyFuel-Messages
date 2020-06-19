@@ -10,4 +10,6 @@ public interface IUpdate extends IRequest {
 	 * @param entities
 	 */
 	public void setEntities(Collection<IEntity> entities);
+	
+	public void addEntity(IEntity entity);
 }

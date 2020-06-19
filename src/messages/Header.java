@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Header implements Serializable {
 
-	public static enum RequestType { Filter, Collect, Insert, Update, Remove }
+	public static enum RequestType { Filter, Collect, Insert, Update, Remove, Login }
 
 	/**
 	 * 

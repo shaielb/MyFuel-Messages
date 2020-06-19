@@ -19,7 +19,7 @@ public class Response extends RequestResponse implements Serializable {
 	/**
 	 * 
 	 */
-	private boolean _indicator;
+	private boolean _passedIndicator;
 
 	/**
 	 * 
@@ -34,15 +34,15 @@ public class Response extends RequestResponse implements Serializable {
 	/**
 	 * @return
 	 */
-	public boolean isIndicator() {
-		return _indicator;
+	public boolean isPassed() {
+		return _passedIndicator;
 	}
 
 	/**
 	 * @param indicator
 	 */
-	public void setIndicator(boolean indicator) {
-		_indicator = indicator;
+	public void setPassed(boolean passed) {
+		_passedIndicator = passed;
 	}
 
 	/**

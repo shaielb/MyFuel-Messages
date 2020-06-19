@@ -25,12 +25,24 @@ public class QueryContainer implements Serializable {
 		_queryMap = new HashMap<String, String>();
 	}
 	
+	public QueryContainer(IEntity queryEntity) {
+		_queryEntity = queryEntity;
+		_queryMap = new HashMap<String, String>();
+	}
+	
 	public void setQueryEntity(IEntity queryEntity) {
 		_queryEntity = queryEntity;
 	}
 	
 	public IEntity getQueryEntity() {
 		return _queryEntity;
+	}
+	
+	public void addQueryCondition(String column, String sign) {
+		if (_queryMap == null) {
+			_queryMap = new HashMap<String, String>();
+		}
+		_queryMap.put(column, sign);
 	}
 	
 	public void addNext(QueryContainer next) {
